@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 export default async function Login() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
@@ -21,7 +21,7 @@ export default async function Login() {
 
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
-    const supabase = createClient();
+    const supabase = await createClient();
 
     const { error } = await supabase.auth.signInWithPassword({
       email,

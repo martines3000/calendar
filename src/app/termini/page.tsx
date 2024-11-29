@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import { View } from './View';
 
 export default async function Page() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const {
     data: { user },
